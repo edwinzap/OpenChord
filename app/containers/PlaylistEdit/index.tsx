@@ -5,7 +5,7 @@ import DraggableFlatList, { RenderItemInfo } from 'react-native-draggable-flatli
 import TouchableIcon from "../../components/TouchableIcon";
 import { Song } from "../../db";
 import ErrorText from "../../components/ErrorText";
-import DraggableItem from "./compoents/DraggableItem";
+import DraggableItem from "./components/DraggableItem";
 import LanguageContext from "../../languages/LanguageContext";
 import { RootStackParamList } from "../../AppNavigation";
 import { RouteProp } from "@react-navigation/native";

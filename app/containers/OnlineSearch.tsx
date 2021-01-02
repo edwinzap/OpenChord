@@ -13,6 +13,7 @@ import { StackNavigationProp } from "@react-navigation/stack";
 import { BottomTabNavigationProp } from "@react-navigation/bottom-tabs";
 import { RootStackParamList, MainTabParamList } from "../AppNavigation";
 import EmptyListMessage from "../components/EmptyListMessage";
+import CustomHeader from "../components/CustomHeader";
 
 type OnlineSearchScreenNavigationProp = CompositeNavigationProp<
   BottomTabNavigationProp<MainTabParamList, 'OnlineSearch'>,
@@ -82,6 +83,7 @@ const OnlineSearch: FunctionComponent<Props> = (props) => {
   }
   return (
     <SafeAreaView style={styles.container}>
+      <CustomHeader title={t('online_search')}/>
       <StatusBar barStyle='dark-content' backgroundColor='white' />
       <SearchBar
         inputRef={searchInput}

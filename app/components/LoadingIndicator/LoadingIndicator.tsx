@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from "react";
 import { StyleSheet, StyleProp, ViewStyle, View, ActivityIndicator } from "react-native";
-import ErrorText from "./ErrorText";
+import ErrorText from "../ErrorText/ErrorText";
 interface LoadingIndicatorProps {
   style?: StyleProp<ViewStyle>
   error?: string | null

@@ -1,17 +1,17 @@
 import React, { useState, FC, useContext, useCallback } from "react";
 import { createBundle, importBundle, decodeJsonBundle } from '../../db/bundler'
-import ListItem from "../../components/ListItem";
+import ListItem from "../../components/ListItem/ListItem";
 import { StyleSheet, Alert, Platform, ScrollView } from "react-native";
 import Share from 'react-native-share';
 import RNFS from 'react-native-fs'
 import DocumentPicker from 'react-native-document-picker';
-import LoadingIndicator from "../../components/LoadingIndicator";
+import LoadingIndicator from "../../components/LoadingIndicator/LoadingIndicator";
 import createFile from "../../utils/createFile";
 import { PermissionsAndroid } from 'react-native';
 import pad from "../../utils/pad";
 import LanguageContext, { languages, translations, LanguageID } from "../../languages/LanguageContext";
 import { GlobalSettings } from "../../db/GlobalSettings";
-import PickerModal from "../../components/PickerModal";
+import PickerModal from "../../components/PickerModal/PickerModal";
 import { SettingsStackParamList } from "../../AppNavigation";
 import AboutDev from "./components/AboutDev";
 import { useFocusEffect } from "@react-navigation/native";

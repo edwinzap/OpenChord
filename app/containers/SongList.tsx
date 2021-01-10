@@ -1,18 +1,19 @@
 import React, { useState, useEffect, FunctionComponent, useContext, useCallback } from "react";
 import { Song } from '../db'
-import ListItem from "../components/ListItem";
-import TouchableIcon from "../components/TouchableIcon";
-import { FlatList, StatusBar } from "react-native";
-import SearchBar from "../components/SearchBar";
-import EmptyListMessage from "../components/EmptyListMessage";
+import ListItem from "../components/ListItem/ListItem";
+import TouchableIcon from "../components/TouchableIcon/TouchableIcon";
+import { FlatList } from "react-native";
+import SearchBar from "../components/SearchBar/SearchBar";
+import EmptyListMessage from "../components/EmptyListMessage/EmptyListMessage";
 import { MainTabParamList, RootStackParamList } from "../AppNavigation";
 import LanguageContext from "../languages/LanguageContext";
-import { CompositeNavigationProp, useFocusEffect } from "@react-navigation/native";
+import { CompositeNavigationProp, ThemeProvider, useFocusEffect } from "@react-navigation/native";
 import { BottomTabNavigationProp } from "@react-navigation/bottom-tabs";
 import { StackNavigationProp } from "@react-navigation/stack";
-import CustomHeader from "../components/CustomHeader";
+import CustomHeader from "../components/CustomHeader/CustomHeader";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { alertDelete } from "../utils/alertDelete";
+import theme from '../AppStyles';
 
 type SongListScreenNavigationProp = CompositeNavigationProp<
   BottomTabNavigationProp<MainTabParamList, 'SongList'>,
@@ -65,11 +66,10 @@ const SongList: FunctionComponent<Props> = (props: Props) => {
   )
 
   return (
-    <SafeAreaView style={{ flex: 1 }}>
-      <StatusBar barStyle='dark-content' backgroundColor='white' />
+    <SafeAreaView style={{ flex: 1, backgroundColor: theme.colors.mainBackground }}>
       <CustomHeader
         title={t('songs')}
-        headerRight={<TouchableIcon onPress={addNewSong} name="plus" />}
+        headerRight={<TouchableIcon onPress={addNewSong} name="plus" color={theme.colors.text} />}
       />
       <SearchBar
         onChangeText={(value) => setQuery(value)}

@@ -1,16 +1,17 @@
 import React, { useState, FunctionComponent, useContext } from "react";
-import { Text, View, TextInput, StyleSheet, Alert } from "react-native";
+import { Text, View, TextInput, Alert } from "react-native";
 import { Playlist } from "../../db/Playlist";
 import DraggableFlatList, { RenderItemInfo } from 'react-native-draggable-flatlist'
-import TouchableIcon from "../../components/TouchableIcon";
+import TouchableIcon from "../../components/TouchableIcon/TouchableIcon";
 import { Song } from "../../db";
-import ErrorText from "../../components/ErrorText";
+import ErrorText from "../../components/ErrorText/ErrorText";
 import DraggableItem from "./components/DraggableItem";
 import LanguageContext from "../../languages/LanguageContext";
 import { RootStackParamList } from "../../AppNavigation";
 import { RouteProp } from "@react-navigation/native";
 import { StackNavigationProp } from "@react-navigation/stack";
 import { SafeAreaView } from "react-native-safe-area-context";
+import styles from './PlaylistEdit.style'
 
 type PlaylistEditScreenRouteProp = RouteProp<RootStackParamList, 'PlaylistEdit'>
 type PlaylistEditScreenNavigationProp = StackNavigationProp<
@@ -21,7 +22,7 @@ type Props = {
   route: PlaylistEditScreenRouteProp
   navigation: PlaylistEditScreenNavigationProp
 }
-const HEADER_HEIGHT = 60
+
 const PlaylistEdit: FunctionComponent<Props> = (props: Props) => {
   let id = props.route.params.id
   let playlist = Playlist.getById(id)!
@@ -89,49 +90,3 @@ const PlaylistEdit: FunctionComponent<Props> = (props: Props) => {
 }
 
 export default PlaylistEdit
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-  playlistNameInputContiner: {
-    paddingVertical: 10,
-    paddingHorizontal: 20,
-    justifyContent: 'center',
-    alignItems: 'center'
-  },
-  playlistNameInput: {
-    fontSize: 22,
-    textAlign: 'center',
-    borderBottomWidth: 2,
-    maxWidth: 250
-  },
-  headerTitle: {
-    fontSize: 18,
-    fontWeight: 'bold'
-  },
-  header: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    height: HEADER_HEIGHT
-  },
-  item: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    borderBottomWidth: 1,
-    borderColor: '#eee',
-    backgroundColor: 'white',
-    justifyContent: 'flex-start'
-  },
-  textContainer: {
-    paddingTop: 20,
-    paddingBottom: 20,
-  },
-  title: {
-    fontSize: 18
-  },
-  subtitle: {
-    fontSize: 14
-  }
-});

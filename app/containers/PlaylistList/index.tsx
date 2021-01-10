@@ -1,21 +1,22 @@
 import React, { useState, FunctionComponent, useContext, useCallback } from "react";
 import { FlatList } from "react-native";
-import ListItem from "../../components/ListItem";
+import ListItem from "../../components/ListItem/ListItem";
 import { Playlist } from "../../db/Playlist";
 import { MainTabParamList, RootStackParamList } from "../../AppNavigation";
-import TouchableIcon from "../../components/TouchableIcon";
-import EmptyListMessage from "../../components/EmptyListMessage";
-import TextInputModal from "../../components/TextInputModal";
+import TouchableIcon from "../../components/TouchableIcon/TouchableIcon";
+import EmptyListMessage from "../../components/EmptyListMessage/EmptyListMessage";
+import TextInputModal from "../../components/TextInputModal/TextInputModal";
 import { createBundle } from "../../db/bundler";
 import createFile from "../../utils/createFile";
 import Share from "react-native-share";
 import LanguageContext from "../../languages/LanguageContext";
-import { CompositeNavigationProp, useFocusEffect } from "@react-navigation/native";
+import { CompositeNavigationProp, ThemeProvider, useFocusEffect } from "@react-navigation/native";
 import { StackNavigationProp } from "@react-navigation/stack";
 import { BottomTabNavigationProp } from "@react-navigation/bottom-tabs";
-import CustomHeader from "../../components/CustomHeader";
+import CustomHeader from "../../components/CustomHeader/CustomHeader";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { alertDelete } from "../../utils/alertDelete";
+import theme from '../../AppStyles'
 
 type PlaylistListScreenNavigationProp = CompositeNavigationProp<
   BottomTabNavigationProp<MainTabParamList, 'PlaylistList'>,
@@ -73,10 +74,10 @@ const PlaylistList: FunctionComponent<Props> = (props: Props) => {
   }
 
   return (
-    <SafeAreaView style={{ flex: 1 }}>
+    <SafeAreaView style={{ flex: 1, backgroundColor: theme.colors.mainBackground }}>
       <CustomHeader
         title={t('playlists')}
-        headerRight={<TouchableIcon onPress={() => setShowAddPlaylistModal(true)} name="plus" />}
+        headerRight={<TouchableIcon onPress={() => setShowAddPlaylistModal(true)} name="plus" color={theme.colors.text} />}
       />
       <TextInputModal
         error={error}

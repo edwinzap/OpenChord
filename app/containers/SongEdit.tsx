@@ -1,7 +1,7 @@
 import React, { useState, useEffect, FunctionComponent, useContext, useLayoutEffect } from "react";
 import { Text, View, StyleSheet, TextInput, KeyboardAvoidingView, Platform } from "react-native";
 import { Song, Artist } from '../db'
-import TouchableIcon from "../components/TouchableIcon";
+import TouchableIcon from "../components/TouchableIcon/TouchableIcon";
 import ChordSheetJS from 'chordsheetjs'
 import { ScrollView, TouchableOpacity } from "react-native-gesture-handler";
 import { RootStackParamList } from "../AppNavigation";

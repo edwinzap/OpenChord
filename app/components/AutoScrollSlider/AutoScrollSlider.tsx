@@ -1,7 +1,8 @@
 import React, { useState, useEffect, FunctionComponent } from "react";
-import { View, StyleSheet } from "react-native";
-import TouchableIcon from "./TouchableIcon";
+import { View } from "react-native";
+import TouchableIcon from "../TouchableIcon/TouchableIcon";
 import Slider from '@react-native-community/slider';
+import styles from './AutoScrollSlider.style'
 
 interface AutoScrollSliderProps {
   show: boolean
@@ -67,12 +68,3 @@ const AutoScrollSlider: FunctionComponent<AutoScrollSliderProps> = (props) => {
   }
 }
 export default AutoScrollSlider
-
-const styles = StyleSheet.create({
-  container: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    height: 60,
-    backgroundColor: '#ccc'
-  }
-});

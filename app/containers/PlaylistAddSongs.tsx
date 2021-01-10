@@ -1,14 +1,14 @@
 import React, { useState, useEffect, useRef, useContext } from "react";
 import { FlatList, View, TextInput, StyleSheet } from "react-native";
 import { Song } from "../db";
-import ListItem from "../components/ListItem";
+import ListItem from "../components/ListItem/ListItem";
 import { Playlist } from "../db/Playlist";
 import { RootStackParamList, MainTabParamList } from "../AppNavigation";
-import SearchBar from "../components/SearchBar";
+import SearchBar from "../components/SearchBar/SearchBar";
 import LanguageContext from "../languages/LanguageContext";
 import { StackNavigationProp } from "@react-navigation/stack";
 import { RouteProp, CompositeNavigationProp } from "@react-navigation/native";
-import EmptyListMessage from "../components/EmptyListMessage";
+import EmptyListMessage from "../components/EmptyListMessage/EmptyListMessage";
 import { BottomTabNavigationProp } from "@react-navigation/bottom-tabs";
 
 type PlaylistAddSongsScreenNavigationProp = CompositeNavigationProp<

@@ -1,6 +1,7 @@
 import React, { FunctionComponent } from 'react'
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
-import { TouchableOpacity, StyleProp, ViewStyle, StyleSheet, TouchableOpacityProps } from 'react-native';
+import { TouchableOpacity, StyleProp, ViewStyle, TouchableOpacityProps } from 'react-native';
+import styles from './TouchableIcon.style'
 
 interface Props extends TouchableOpacityProps {
   iconStyle?: StyleProp<ViewStyle>
@@ -21,9 +22,4 @@ const TouchableIcon: FunctionComponent<Props> = (props) => {
     </TouchableOpacity>
   )
 }
-const styles = StyleSheet.create({
-  iconPadding: {
-    padding: 10
-  }
-})
 export default TouchableIcon

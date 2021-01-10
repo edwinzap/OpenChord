@@ -1,6 +1,6 @@
 import React from "react";
 import { View, TouchableOpacity, StyleSheet, Modal } from "react-native";
-import ListItem, { LeftIconOptions } from "./ListItem";
+import ListItem, { LeftIconOptions } from "../ListItem/ListItem";
 
 export interface PickerOption<T> {
   key?: string

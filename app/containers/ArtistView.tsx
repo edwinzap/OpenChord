@@ -1,7 +1,7 @@
 import React, { useState, useContext, FC } from "react";
 import { FlatList } from "react-native";
 import { Song, Artist } from "../db";
-import ListItem from "../components/ListItem";
+import ListItem from "../components/ListItem/ListItem";
 import LanguageContext from "../languages/LanguageContext";
 import { RouteProp } from "@react-navigation/native";
 import { RootStackParamList } from "../AppNavigation";

@@ -1,7 +1,7 @@
-import React, { useEffect, useRef, FunctionComponent } from "react";
+import React, { useRef, FunctionComponent } from "react";
 import { Text, View, TouchableOpacity, FlatList, StyleProp, ViewStyle } from "react-native";
-import ChordChart from "../ChordChart/ChordChart";
-import chords from '../../assets/chords/guitar.json';
+import { ChordChart } from "@components";
+import chords from '@assets/chords/guitar.json';
 import styles from './ChordTab.style';
 
 interface Props {

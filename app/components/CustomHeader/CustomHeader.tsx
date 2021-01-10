@@ -1,5 +1,5 @@
 import React, { FunctionComponent, ReactNode } from "react";
-import { Text, StyleSheet, View, Platform } from "react-native";
+import { Text, View } from "react-native";
 import styles from './CustomHeader.style'
 
 interface Props {

@@ -1,6 +1,6 @@
 import React from "react"
-import IText from "../components/IText"
-import { SentenceID } from "../languages/translations"
+import IText from "@components/IText"
+import { SentenceID } from "@languages/translations"
 import { StyleSheet } from "react-native"
 
 const StackHeaderTitle = (props: { text: SentenceID }) => {

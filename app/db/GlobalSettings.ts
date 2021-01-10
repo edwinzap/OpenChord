@@ -1,5 +1,5 @@
 import realm from "."
-import { LanguageID } from "../languages/translations"
+import { LanguageID } from "@languages/translations"
 
 const DEFAULTS: GlobalSettings = {
   language: 'en_us',

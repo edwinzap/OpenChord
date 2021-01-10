@@ -1,7 +1,7 @@
 import React, { useState, useEffect, FunctionComponent } from "react";
 import { View } from "react-native";
-import TouchableIcon from "../TouchableIcon/TouchableIcon";
 import Slider from '@react-native-community/slider';
+import { TouchableIcon } from "@components";
 import styles from './AutoScrollSlider.style'
 
 interface AutoScrollSliderProps {

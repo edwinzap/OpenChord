@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from "react";
-import { Text, View, TouchableOpacity, StyleSheet, Modal } from "react-native";
+import { Text, View, TouchableOpacity, Modal } from "react-native";
 import styles from './OptionsMenu.style'
 
 export interface Option {

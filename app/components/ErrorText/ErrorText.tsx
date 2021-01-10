@@ -1,5 +1,6 @@
 import React, { FunctionComponent } from "react";
-import { TextProps, Text, StyleSheet } from "react-native";
+import { TextProps, Text } from "react-native";
+import styles from './ErrorText.style'
 
 const ErrorText: FunctionComponent<TextProps> = (props) => {
   let { style, children } = props
@@ -9,7 +10,5 @@ const ErrorText: FunctionComponent<TextProps> = (props) => {
     return null
   }
 }
-const styles = StyleSheet.create({
-  errorMsg: { color: 'red' }
-})
+
 export default ErrorText

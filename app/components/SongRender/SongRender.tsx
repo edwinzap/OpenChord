@@ -1,8 +1,8 @@
-import React, { useRef, useEffect, useImperativeHandle, forwardRef, RefForwardingComponent } from 'react'
+import React, { useRef, useEffect, useImperativeHandle, forwardRef, RefForwardingComponent, ForwardRefRenderFunction } from 'react'
 import WebView from 'react-native-webview'
-import { NativeSyntheticEvent, Dimensions } from 'react-native'
+import { NativeSyntheticEvent } from 'react-native'
 import { WebViewMessage } from 'react-native-webview/lib/WebViewTypes'
-import { useDimensions } from '../../utils/useDimensions'
+import { useDimensions } from '@utils/useDimensions'
 
 interface Props {
   chordProContent: string
@@ -17,7 +17,7 @@ export interface SongRenderRef {
 }
 
 const ARTIST_TAG = "<artist>"
-const SongRender: RefForwardingComponent<SongRenderRef, Props> = (props, ref) => {
+const SongRender: ForwardRefRenderFunction<SongRenderRef, Props> = (props, ref) => {
   const webRef = useRef<WebView>(null)
   let { scrollSpeed = 0 } = props
   let dimensionsData = useDimensions()

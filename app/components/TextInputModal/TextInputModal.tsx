@@ -1,7 +1,8 @@
 import React, { FunctionComponent, useState, useRef, useEffect } from "react";
-import { Text, View, TouchableOpacity, StyleSheet, Modal, Button, TextInput, KeyboardAvoidingView, Platform } from "react-native";
-import ErrorText from "../ErrorText/ErrorText";
-import PrimaryButton from "../PrimaryButton/PrimaryButton";
+import { View, TouchableOpacity, Modal, TextInput, KeyboardAvoidingView, Platform } from "react-native";
+import { ErrorText, PrimaryButton } from "@components";
+import styles from './TextInputModal.style'
+
 
 interface TextInputModalProps {
   enabled: boolean
@@ -54,27 +55,3 @@ const TextInputModal: FunctionComponent<TextInputModalProps> = (props) => {
 }
 export default TextInputModal
 
-const styles = StyleSheet.create({
-  backgroundOverlayer: {
-    backgroundColor: '#00000040',
-    flex: 1,
-    justifyContent: 'flex-end'
-  },
-  outsideContainer: {
-    flex: 1
-  },
-  container: {
-    flex: 1,
-    justifyContent: 'flex-end',
-    backgroundColor: '#00000040'
-  },
-  input: {
-    fontSize: 24,
-    backgroundColor: 'white',
-    paddingVertical: 16,
-    paddingLeft: 8
-  },
-  button: {
-    paddingVertical: 16
-  }
-});

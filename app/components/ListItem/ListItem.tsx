@@ -1,7 +1,7 @@
-import React, { useState, useEffect, FunctionComponent } from "react";
-import { Text, View, TouchableOpacity, StyleSheet } from "react-native";
-import TouchableIcon from "../TouchableIcon/TouchableIcon";
-import OptionsMenu, { Option } from "../OptionsMenu/OptionsMenu";
+import React, { useState, FunctionComponent } from "react";
+import { Text, View, TouchableOpacity } from "react-native";
+import { TouchableIcon, OptionsMenu } from "@components";
+import { Option } from "@components/OptionsMenu/OptionsMenu";
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
 import styles from './ListItem.style'
 

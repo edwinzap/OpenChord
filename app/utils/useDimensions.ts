@@ -22,3 +22,5 @@ export const useDimensions = () => {
     isLandscape: screenData.width > screenData.height,
   };
 };
+
+export default useDimensions;

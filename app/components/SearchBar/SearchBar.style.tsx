@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native";
-import theme from '../../AppStyles'
+import theme from '@styles/AppStyles'
 
 export default StyleSheet.create({
   container: {
@@ -11,12 +11,12 @@ export default StyleSheet.create({
     alignItems: 'center',
     backgroundColor: theme.colors.contentBackground,
     borderRadius: 100,
-    paddingHorizontal: 10
+    paddingHorizontal: theme.spacing.xs
   },
   searchText: {
     flex: 1,
     paddingVertical: 8,
     paddingLeft: 8,
-    fontSize: 18
+    fontSize: theme.textVariants.subtitle
   }
 });

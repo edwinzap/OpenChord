@@ -1,11 +1,12 @@
 import 'react-native-gesture-handler';
 import React, { useContext, useEffect } from "react";
-import AppNavigation from './app/AppNavigation'
-import { NavigationContainer } from '@react-navigation/native';
-import LanguageContext, { LanguageProvider } from "./app/languages/LanguageContext";
-import { GlobalSettings } from "./app/db/GlobalSettings";
 import { StatusBar } from 'react-native';
-import theme from './app/AppStyles'
+import { NavigationContainer } from '@react-navigation/native';
+import AppNavigation from './app/navigation/AppNavigation'
+import LanguageContext, { LanguageProvider } from "@languages/LanguageContext";
+import { GlobalSettings } from "@db";
+
+import theme from '@styles/AppStyles'
 
 const LoadLanguage = () => {
   const { changeLanguage } = useContext(LanguageContext)

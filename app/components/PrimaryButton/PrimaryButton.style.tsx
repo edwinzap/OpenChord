@@ -1,9 +1,9 @@
 import { StyleSheet } from "react-native";
-import theme from '../../AppStyles'
+import theme from '@styles/AppStyles'
 
 export default StyleSheet.create({
   buttonOutline: {
-    padding: 10,
+    padding: theme.spacing.xs,
     borderWidth: 1,
     borderRadius: 3,
     alignItems: 'center',

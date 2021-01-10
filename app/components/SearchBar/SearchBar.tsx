@@ -1,4 +1,4 @@
-import React, { useState, useEffect, FunctionComponent, useContext } from "react";
+import React, { FunctionComponent } from "react";
 import { View } from "react-native";
 import { TextInput } from "react-native-gesture-handler";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";

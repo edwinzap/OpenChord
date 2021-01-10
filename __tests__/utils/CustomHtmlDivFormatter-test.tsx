@@ -1,7 +1,6 @@
 import 'react-native';
-import React from 'react';
 // Note: test renderer must be required after react-native.
-import CustomHtmlDivFormatter from '../../app/utils/CustomHtmlDivFormatter';
+import CustomHtmlDivFormatter from '@utils/customHtmlDivFormatter';
 import ChordSheetJS from 'chordsheetjs';
 
 it('render tags correctly', () => {

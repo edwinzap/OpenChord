@@ -1,6 +1,5 @@
 import { Alert, Platform } from "react-native"
-import { Artist, Song } from "../db"
-import { Playlist } from "../db/Playlist"
+import { Artist, Song, Playlist } from "@db"
 
 export const alertDelete = (modelType: 'artist' | 'song' | 'playlist', id: string, callback: () => void) => {
   const alertFunc = () => {
@@ -34,3 +33,5 @@ export const alertDelete = (modelType: 'artist' | 'song' | 'playlist', id: strin
     alertFunc()
   }
 }
+
+export default alertDelete;

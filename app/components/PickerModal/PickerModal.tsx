@@ -1,6 +1,7 @@
 import React from "react";
-import { View, TouchableOpacity, StyleSheet, Modal } from "react-native";
-import ListItem, { LeftIconOptions } from "../ListItem/ListItem";
+import { View, TouchableOpacity, Modal } from "react-native";
+import ListItem, { LeftIconOptions } from "@components/ListItem/ListItem";
+import styles from './PickerModal.style'
 
 export interface PickerOption<T> {
   key?: string
@@ -50,17 +51,3 @@ function PickerModal<T>(props: Props<T>) {
   );
 }
 export default PickerModal
-
-const styles = StyleSheet.create({
-  backgroundOverlayer: {
-    backgroundColor: '#00000040',
-    flex: 1,
-    justifyContent: 'flex-end'
-  },
-  outsideContainer: {
-    flex: 1
-  },
-  container: {
-    backgroundColor: 'white'
-  }
-});

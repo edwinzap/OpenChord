@@ -109,3 +109,5 @@ export default class CustomHtmlDivFormatter {
     return html
   }
 }
+
+export default CustomHtmlDivFormatter;

@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from "react";
 import { Text, View } from "react-native";
-import PrimaryButton from "../PrimaryButton/PrimaryButton";
+import { PrimaryButton } from "@components";
 import styles from './EmptyListMessage.style'
 
 interface EmptyListMessageProps {

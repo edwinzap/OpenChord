@@ -1,7 +1,7 @@
-import React, { useState, useEffect, FunctionComponent } from "react";
+import { FunctionComponent } from "react";
 import ChordSheetJS, { Song } from 'chordsheetjs'
 import Chord from 'chordjs'
-import CustomHtmlDivFormatter from "../../utils/CustomHtmlDivFormatter";
+import CustomHtmlDivFormatter from "@utils/customHtmlDivFormatter";
 
 interface SongProps {
   chords: Array<Chord>
@@ -91,4 +91,5 @@ const SongTransformer: FunctionComponent<Props> = (props) => {
 
   return props.children({ chords: allChords, htmlSong })
 }
+
 export default SongTransformer

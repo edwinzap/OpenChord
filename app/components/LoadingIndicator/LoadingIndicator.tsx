@@ -1,6 +1,8 @@
 import React, { FunctionComponent } from "react";
-import { StyleSheet, StyleProp, ViewStyle, View, ActivityIndicator } from "react-native";
-import ErrorText from "../ErrorText/ErrorText";
+import { StyleProp, ViewStyle, View, ActivityIndicator } from "react-native";
+import { ErrorText } from "@components";
+import styles from './LoadingIndicator.style'
+
 interface LoadingIndicatorProps {
   style?: StyleProp<ViewStyle>
   error?: string | null
@@ -15,13 +17,5 @@ const LoadingIndicator: FunctionComponent<LoadingIndicatorProps> = (props) => {
     </View>
   )
 }
-const styles = StyleSheet.create({
-  container: {
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  activity: {
-    paddingVertical: 20
-  }
-})
+
 export default LoadingIndicator

@@ -10,7 +10,23 @@
     "resolveJsonModule": true,
     "noEmit": true,
     "strict": true,
-    "target": "esnext"
+    "target": "esnext",
+    "baseUrl": "./app",
+    "paths": {
+      "@assets/*": ["assets/*"],
+      "@components/*": ["components/*"],
+      "@components": ["components"],
+      "@containers/*": ["containers/*"],
+      "@db": ["db"],
+      "@db/*": ["db/*"],
+      "@languages/*": ["languages/*"],
+      "@navigation/*": ["navigation/*"],
+      "@styles/*": ["styles/*"],
+      "@services": ["services"],
+      "@services/*": ["services/*"],
+      "@utils": ["utils"],
+      "@utils/*": ["utils/*"],
+    }
   },
   "exclude": [
     "node_modules",

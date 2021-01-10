@@ -1,6 +1,6 @@
 import React, { useContext, FC } from "react";
 import { TextProps, Text } from "react-native";
-import LanguageContext, { SentenceID } from "../languages/LanguageContext";
+import LanguageContext, { SentenceID } from "@languages/LanguageContext";
 
 interface Props extends TextProps {
   text: SentenceID

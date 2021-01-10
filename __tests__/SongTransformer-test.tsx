@@ -3,7 +3,7 @@ import React from 'react';
 import { Text } from 'react-native';
 // Note: test renderer must be required after react-native.
 import renderer from 'react-test-renderer';
-import SongTransformer, { transposeSong, getChords } from '../app/components/SongTransformer/SongTransformer';
+import SongTransformer, { transposeSong, getChords } from '@components/SongTransformer/SongTransformer';
 import ChordSheetJS from 'chordsheetjs'
 import Chord from 'chordjs'
 

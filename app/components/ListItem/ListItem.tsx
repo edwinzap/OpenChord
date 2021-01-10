@@ -1,8 +1,9 @@
 import React, { useState, useEffect, FunctionComponent } from "react";
 import { Text, View, TouchableOpacity, StyleSheet } from "react-native";
-import TouchableIcon from "./TouchableIcon";
-import OptionsMenu, { Option } from "./OptionsMenu";
+import TouchableIcon from "../TouchableIcon/TouchableIcon";
+import OptionsMenu, { Option } from "../OptionsMenu/OptionsMenu";
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
+import styles from './ListItem.style'
 
 export type LeftIconOptions = null | 'empty-space' | 'arrow-up' | 'arrow-down'
 interface ListItemProps {
@@ -13,6 +14,7 @@ interface ListItemProps {
   showIcon?: undefined | null | 'plus' | 'check'
   options?: Option[]
 }
+
 const ListItem: FunctionComponent<ListItemProps> = (props) => {
   const [isMenuEnabled, setMenuEnabled] = useState(false)
   return (
@@ -30,7 +32,7 @@ const ListItem: FunctionComponent<ListItemProps> = (props) => {
       {props.showIcon == 'check' && <TouchableIcon onPress={props.onPress} name="check" size={25} />}
       {props.showIcon == 'plus' && <TouchableIcon onPress={props.onPress} name="plus" size={25} />}
       {props.options &&
-        <TouchableIcon onPress={() => setMenuEnabled(true)} name="dots-vertical" size={25} />
+        <TouchableIcon onPress={() => setMenuEnabled(true)} name="dots-vertical" size={25} color={styles.leftIcon.tintColor} />
       }
       {props.options &&
         <OptionsMenu
@@ -42,29 +44,3 @@ const ListItem: FunctionComponent<ListItemProps> = (props) => {
   );
 }
 export default ListItem
-
-const styles = StyleSheet.create({
-  item: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    paddingLeft: 20,
-    borderBottomWidth: 1,
-    borderColor: '#eee',
-    backgroundColor: 'white',
-    justifyContent: 'space-between'
-  },
-  textContainer: {
-    flex: 1,
-    paddingTop: 20,
-    paddingBottom: 20,
-  },
-  title: {
-    fontSize: 18
-  },
-  subtitle: {
-    fontSize: 14
-  },
-  leftIcon: {
-    width: 30
-  }
-});

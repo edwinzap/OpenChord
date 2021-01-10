@@ -2,12 +2,12 @@ import React, { useState, useEffect, FunctionComponent, useRef, useContext, useL
 import { Text, View, StyleSheet, Switch, TouchableHighlight } from "react-native";
 import { Song } from '../../db'
 import SideMenu from './components/SideMenu'
-import SongRender, { SongRenderRef } from "../../components/SongRender";
-import TouchableIcon from "../../components/TouchableIcon";
+import SongRender, { SongRenderRef } from "../../components/SongRender/SongRender";
+import TouchableIcon from "../../components/TouchableIcon/TouchableIcon";
 import Chord from 'chordjs'
-import ChordTab from "../../components/ChordTab";
-import SongTransformer from "../../components/SongTransformer";
-import AutoScrollSlider from "../../components/AutoScrollSlider";
+import ChordTab from "../../components/ChordTab/ChordTab";
+import SongTransformer from "../../components/SongTransformer/SongTransformer";
+import AutoScrollSlider from "../../components/AutoScrollSlider/AutoScrollSlider";
 import { RootStackParamList } from "../../AppNavigation";
 import SelectPlaylist from "./components/SelectPlaylist"
 import PageTurner from "./components/PageTurner";
@@ -17,6 +17,7 @@ import { MAX_FONT_SIZE, MIN_FONT_SIZE, FONT_SIZE_STEP } from "../Settings/FontSi
 import clamp from "../../utils/clamp";
 import { RouteProp } from "@react-navigation/native";
 import { StackNavigationProp } from "@react-navigation/stack";
+import styles from './SongView.style'
 
 type SongViewScreenRouteProp = RouteProp<RootStackParamList, 'SongView'>
 type SongViewScreenNavigationProp = StackNavigationProp<
@@ -190,7 +191,7 @@ const SongView: FunctionComponent<Props> = (props) => {
         fontSize={fontSize}
       >
         {songProps => (
-          <View style={{ flex: 1 }}>
+          <View style={{ flex: 1, backgroundColor: styles.container.backgroundColor }}>
             <SongRender
               ref={songRenderRef}
               onPressArtist={onPressArtist}
@@ -226,39 +227,4 @@ const SongView: FunctionComponent<Props> = (props) => {
   );
 }
 
-const styles = StyleSheet.create({
-  flexRow: {
-    flexDirection: 'row',
-  },
-  tool: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    paddingHorizontal: 14,
-    paddingVertical: 10,
-  },
-  toolButtonContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-  toolLabelSmall: {
-    maxWidth: 100,
-    paddingRight: 0,
-    textTransform: 'uppercase',
-  },
-  toolLabel: {
-    position: 'relative',
-    textAlign: 'left',
-    textTransform: 'uppercase',
-    paddingVertical: 10,
-  },
-  toolBadge: {
-    position: 'absolute',
-    top: -5,
-    right: -15,
-    width: 30,
-    height: 20,
-    color: 'tomato'
-  },
-})
 export default SongView

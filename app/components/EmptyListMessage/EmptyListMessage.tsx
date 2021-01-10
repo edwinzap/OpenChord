@@ -1,6 +1,8 @@
 import React, { FunctionComponent } from "react";
-import { TextProps, Text, StyleSheet, View, Button } from "react-native";
-import PrimaryButton from "./PrimaryButton";
+import { Text, View } from "react-native";
+import PrimaryButton from "../PrimaryButton/PrimaryButton";
+import styles from './EmptyListMessage.style'
+
 interface EmptyListMessageProps {
   message: string
   onPress?: () => void
@@ -17,17 +19,5 @@ const EmptyListMessage: FunctionComponent<EmptyListMessageProps> = (props) => {
     </View>
   )
 }
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center'
-  },
-  message: {
-    paddingHorizontal: 30,
-    paddingBottom: 20,
-    fontSize: 18,
-    textAlign: 'center',
-  }
-})
-export default EmptyListMessage
+
+export default EmptyListMessage 

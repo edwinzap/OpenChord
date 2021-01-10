@@ -1,5 +1,6 @@
 import React, { FunctionComponent } from "react";
 import { Text, View, TouchableOpacity, StyleSheet, Modal } from "react-native";
+import styles from './OptionsMenu.style'
 
 export interface Option {
   title: string
@@ -36,26 +37,5 @@ const OptionsMenu: FunctionComponent<OptionsMenuProps> = (props) => {
     </Modal>
   );
 }
-export default OptionsMenu
 
-const styles = StyleSheet.create({
-  backgroundOverlayer: {
-    backgroundColor: '#00000040',
-    flex: 1,
-    justifyContent: 'flex-end'
-  },
-  outsideContainer: {
-    flex: 1
-  },
-  container: {
-    backgroundColor: 'white'
-  },
-  optionItem: {
-    justifyContent: 'center',
-    alignItems: 'center'
-  },
-  optionTitle: {
-    paddingVertical: 20,
-    fontSize: 18
-  }
-});
+export default OptionsMenu

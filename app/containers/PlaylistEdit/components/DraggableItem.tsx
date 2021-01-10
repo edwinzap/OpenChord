@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from "react";
 import { Text, StyleSheet, View } from "react-native";
-import TouchableIcon from "../../../components/TouchableIcon";
+import TouchableIcon from "../../../components/TouchableIcon/TouchableIcon";
 
 interface DraggableItemProps {
   title: string

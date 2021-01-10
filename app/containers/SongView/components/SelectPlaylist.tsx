@@ -1,9 +1,9 @@
 import React, { useState, FC, useContext } from "react";
 import { Text, View, TouchableOpacity, StyleSheet, ScrollView } from "react-native";
 import { Playlist } from "../../../db/Playlist";
-import ListItem from "../../../components/ListItem";
+import ListItem from "../../../components/ListItem/ListItem";
 import { Song } from "../../../db";
-import TextInputModal from "../../../components/TextInputModal";
+import TextInputModal from "../../../components/TextInputModal/TextInputModal";
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
 import { useDimensions } from "../../../utils/useDimensions";
 import LanguageContext from "../../../languages/LanguageContext";

@@ -5,18 +5,19 @@ import ArtistList from "./containers/ArtistList";
 import ArtistView from './containers/ArtistView';
 import SongView from './containers/SongView';
 import SongList from './containers/SongList';
-import TabBarIcon from './components/TabBarIcon';
+import TabBarIcon from './components/TabBarIcon/TabBarIcon';
 import OnlineSearch from './containers/OnlineSearch';
 import SongPreview from './containers/SongPreview';
 import OnlineArtistView from './containers/OnlineArtistView';
 import SongEdit from './containers/SongEdit';
 import PlaylistList from './containers/PlaylistList';
-import PlaylistView from './containers/PlaylistView';
+import PlaylistView from './containers/PlaylistView/PlaylistView';
 import PlaylistAddSongs from './containers/PlaylistAddSongs';
 import PlaylistEdit from './containers/PlaylistEdit';
 import Settings from './containers/Settings';
 import FontSizeSelect from './containers/Settings/FontSizeSelect';
 import LanguageContext from './languages/LanguageContext';
+import theme from "./AppStyles";
 
 export type SettingsStackParamList = {
   Settings: undefined;
@@ -43,20 +44,25 @@ const Tab = createBottomTabNavigator<MainTabParamList>();
 const MainTab = () => {
   const { t } = useContext(LanguageContext)
   return (
-    <Tab.Navigator tabBarOptions={{ activeTintColor: 'tomato' }}>
+    <Tab.Navigator
+      tabBarOptions={{
+        activeTintColor: theme.colors.activeTint,
+        inactiveTintColor: theme.colors.text,
+        style: { backgroundColor: theme.colors.headerBackground, },
+        labelStyle: { paddingHorizontal: 1 }
+      }}>
       <Tab.Screen
-        name="PlaylistList"
-        options={{ title: t('playlists'), tabBarIcon: (props) => <TabBarIcon {...props} name="playlist-music" /> }}
-        component={PlaylistList} />
+        name="SongList"
+        options={{ title: t('songs'), tabBarIcon: (props) => <TabBarIcon {...props} name="format-list-bulleted-square" /> }}
+        component={SongList} />
       <Tab.Screen
         name="ArtistList"
         options={{ title: t('artists'), tabBarIcon: (props) => <TabBarIcon {...props} name="artist" /> }}
         component={ArtistList} />
       <Tab.Screen
-        name="SongList"
-        options={{ title: t('songs'), tabBarIcon: (props) => <TabBarIcon {...props} name="format-list-bulleted-square" /> }}
-        component={SongList}
-      />
+        name="PlaylistList"
+        options={{ title: t('playlists'), tabBarIcon: (props) => <TabBarIcon {...props} name="playlist-music" /> }}
+        component={PlaylistList} />
       <Tab.Screen
         name="OnlineSearch"
         options={{ title: t('online_search'), tabBarIcon: (props) => <TabBarIcon {...props} name="magnify" /> }}
@@ -78,13 +84,13 @@ export type RootStackParamList = {
   SongEdit: undefined | { id: string }
   PlaylistView: { id: string, title: string }
   PlaylistAddSongs: { id: string }
-  PlaylistEdit: { id: string }
+  PlaylistEdit: { id: string },
 }
 const RootStack = createStackNavigator<RootStackParamList>()
 const AppNavigation = () => {
   const { t } = useContext(LanguageContext)
   return (
-    <RootStack.Navigator>
+    <RootStack.Navigator screenOptions={{ cardStyle: { backgroundColor: theme.colors.mainBackground, shadowColor: 'transparent' } }}>
       <RootStack.Screen name="MainTab" component={MainTab} options={{ headerShown: false, title: t('home') }} />
       <RootStack.Screen
         name="OnlineArtistView"

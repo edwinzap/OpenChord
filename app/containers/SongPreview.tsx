@@ -1,13 +1,13 @@
 import React, { useState, useEffect, FunctionComponent, useContext } from "react";
 import { View, TouchableOpacity, StyleSheet, Alert } from "react-native";
-import SongRender from "../components/SongRender";
-import SongTransformer from "../components/SongTransformer";
+import SongRender from "../components/SongRender/SongRender";
+import SongTransformer from "../components/SongTransformer/SongTransformer";
 import { getService } from "../services";
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 import ChordSheetJS from 'chordsheetjs';
 import { Artist, Song } from "../db";
 import { RootStackParamList } from "../AppNavigation";
-import LoadingIndicator from "../components/LoadingIndicator";
+import LoadingIndicator from "../components/LoadingIndicator/LoadingIndicator";
 import LanguageContext from "../languages/LanguageContext";
 import { StackNavigationProp } from "@react-navigation/stack";
 import { RouteProp } from "@react-navigation/native";
@@ -59,7 +59,7 @@ const SongPreview: FunctionComponent<Props> = (props) => {
     let songTitle = parsedSong.getMetaData('title')!
 
     let headerlessContent = chordSheet!
-    headerlessContent = headerlessContent.replace(/{artist:[^}]*}\n/g, '')
+    headerlessContent = headerlessContent.replace(/{artist:[^}]*}\n/g, '') //Warning: can also be {a, t, st, subtitle!
     headerlessContent = headerlessContent.replace(/{title:[^}]*}\n/g, '')
 
     let artist: Artist | undefined = Artist.getByName(artistName)

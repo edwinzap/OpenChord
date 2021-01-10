@@ -1,5 +1,6 @@
 import React, { FunctionComponent } from "react";
-import { Text, StyleSheet, TouchableOpacity, StyleProp, ViewStyle } from "react-native";
+import { Text, TouchableOpacity, StyleProp, ViewStyle } from "react-native";
+import styles from './PrimaryButton.style'
 
 interface PrimaryButtonProps {
   style?: StyleProp<ViewStyle>
@@ -15,26 +16,5 @@ const PrimaryButton: FunctionComponent<PrimaryButtonProps> = (props) => {
     </TouchableOpacity>
   )
 }
-const styles = StyleSheet.create({
-  buttonOutline: {
-    borderColor: 'tomato',
-    padding: 10,
-    borderWidth: 1,
-    borderRadius: 3,
-    alignItems: 'center',
-    justifyContent: 'center'
-  },
-  button: {
-    backgroundColor: 'tomato',
-    padding: 10,
-    alignItems: 'center',
-    justifyContent: 'center'
-  },
-  titleOutline: {
-    color: 'tomato'
-  },
-  title: {
-    color: 'white'
-  }
-})
+
 export default PrimaryButton

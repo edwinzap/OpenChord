@@ -1,19 +1,21 @@
 import React, { useState, useEffect, FunctionComponent, useContext, useLayoutEffect, useCallback } from "react";
 import { FlatList, View, TouchableOpacity, Text } from "react-native";
-import ListItem, { LeftIconOptions } from "../components/ListItem";
-import { Playlist, SortBy } from "../db/Playlist";
-import { RootStackParamList } from "../AppNavigation";
-import TouchableIcon from "../components/TouchableIcon";
-import EmptyListMessage from "../components/EmptyListMessage";
-import PrimaryButton from "../components/PrimaryButton";
-import LanguageContext from "../languages/LanguageContext";
+import ListItem, { LeftIconOptions } from "../../components/ListItem/ListItem";
+import { Playlist, SortBy } from "../../db/Playlist";
+import { RootStackParamList } from "../../AppNavigation";
+import TouchableIcon from "../../components/TouchableIcon/TouchableIcon";
+import EmptyListMessage from "../../components/EmptyListMessage/EmptyListMessage";
+import PrimaryButton from "../../components/PrimaryButton/PrimaryButton";
+import LanguageContext from "../../languages/LanguageContext";
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
-import PickerModal, { PickerOption } from "../components/PickerModal";
-import { Song } from "../db";
+import PickerModal, { PickerOption } from "../../components/PickerModal/PickerModal";
+import { Song } from "../../db";
 import { List, Results } from "realm";
 import { StackNavigationProp } from "@react-navigation/stack";
 import { RouteProp, useFocusEffect } from "@react-navigation/native";
-import { alertDelete } from "../utils/alertDelete";
+import { alertDelete } from "../../utils/alertDelete";
+import styles from './PlaylistView.style';
+
 
 type PlaylistViewScreenRouteProp = RouteProp<RootStackParamList, 'PlaylistView'>;
 type PlaylistViewScreenNavigationProp = StackNavigationProp<
@@ -110,7 +112,7 @@ const PlaylistView: FunctionComponent<Props> = (props: Props) => {
         ListHeaderComponent={() => {
           if (songs.length > 0)
             return (
-              <View style={{ backgroundColor: 'white' }}>
+              <View style={{ backgroundColor: styles.container.backgroundColor }}>
                 <PrimaryButton style={{ margin: 10 }} onPress={onPressAddSongs} title={t('add_songs').toUpperCase()} outline />
                 <TouchableOpacity style={{ flexDirection: 'row', paddingVertical: 18, borderBottomWidth: 1, borderColor: '#eee', paddingLeft: 20, alignItems: 'center' }} onPress={() => setEnableSortSelect(true)}>
                   <Text style={{ color: '#777' }}>{sortOptions.find(o => o.value === sortBy)?.label.toUpperCase()}</Text>

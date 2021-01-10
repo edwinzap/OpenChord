@@ -1,7 +1,7 @@
 import React, { FunctionComponent, useState, useRef, useEffect } from "react";
 import { Text, View, TouchableOpacity, StyleSheet, Modal, Button, TextInput, KeyboardAvoidingView, Platform } from "react-native";
-import ErrorText from "./ErrorText";
-import PrimaryButton from "./PrimaryButton";
+import ErrorText from "../ErrorText/ErrorText";
+import PrimaryButton from "../PrimaryButton/PrimaryButton";
 
 interface TextInputModalProps {
   enabled: boolean

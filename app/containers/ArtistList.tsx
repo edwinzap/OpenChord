@@ -1,17 +1,18 @@
 import React, { useState, useContext, useCallback } from "react";
 import { View, StyleSheet, FlatList, StatusBar } from "react-native";
 import { Artist } from '../db'
-import ListItem from "../components/ListItem";
-import TextInputModal from "../components/TextInputModal";
-import EmptyListMessage from "../components/EmptyListMessage";
+import ListItem from "../components/ListItem/ListItem";
+import TextInputModal from "../components/TextInputModal/TextInputModal";
+import EmptyListMessage from "../components/EmptyListMessage/EmptyListMessage";
 import { RootStackParamList, MainTabParamList } from "../AppNavigation";
 import LanguageContext from "../languages/LanguageContext";
 import { BottomTabNavigationProp } from "@react-navigation/bottom-tabs";
 import { CompositeNavigationProp, useFocusEffect } from "@react-navigation/native";
 import { StackNavigationProp } from "@react-navigation/stack";
-import CustomHeader from "../components/CustomHeader";
+import CustomHeader from "../components/CustomHeader/CustomHeader";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { alertDelete } from "../utils/alertDelete";
+import theme from '../AppStyles';
 
 type ArtistListScreenNavigationProp = CompositeNavigationProp<
   BottomTabNavigationProp<MainTabParamList, 'ArtistList'>,
@@ -69,8 +70,7 @@ const ArtistList = (props: Props) => {
   )
 
   return (
-    <SafeAreaView style={{ flex: 1 }}>
-      <StatusBar barStyle='dark-content' backgroundColor='white' />
+    <SafeAreaView style={{ flex: 1, backgroundColor: theme.colors.mainBackground }}>
       <CustomHeader title={t('artists')} />
       <TextInputModal
         error={error}

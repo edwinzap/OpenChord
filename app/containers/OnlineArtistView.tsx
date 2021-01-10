@@ -1,9 +1,9 @@
 import React, { useState, useEffect, FunctionComponent } from "react";
 import { FlatList } from "react-native";
-import ListItem from "../components/ListItem";
+import ListItem from "../components/ListItem/ListItem";
 import { getService } from "../services";
 import { SongDoc } from "../services/BaseService";
-import LoadingIndicator from "../components/LoadingIndicator";
+import LoadingIndicator from "../components/LoadingIndicator/LoadingIndicator";
 import { StackNavigationProp } from "@react-navigation/stack";
 import { RootStackParamList } from "../AppNavigation";
 import { RouteProp } from "@react-navigation/native";

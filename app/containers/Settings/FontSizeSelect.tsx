@@ -1,8 +1,8 @@
 import React, { useState, FC } from "react";
 import Slider from "@react-native-community/slider";
 import { View, Text, StyleSheet } from "react-native";
-import SongTransformer from "../../components/SongTransformer";
-import SongRender from "../../components/SongRender";
+import SongTransformer from "../../components/SongTransformer/SongTransformer";
+import SongRender from "../../components/SongRender/SongRender";
 import { GlobalSettings } from "../../db/GlobalSettings";
 
 export const MIN_FONT_SIZE = 14

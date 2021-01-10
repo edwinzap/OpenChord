@@ -2,7 +2,7 @@ import React, { useRef, useEffect, useImperativeHandle, forwardRef, RefForwardin
 import WebView from 'react-native-webview'
 import { NativeSyntheticEvent, Dimensions } from 'react-native'
 import { WebViewMessage } from 'react-native-webview/lib/WebViewTypes'
-import { useDimensions } from '../utils/useDimensions'
+import { useDimensions } from '../../utils/useDimensions'
 
 interface Props {
   chordProContent: string

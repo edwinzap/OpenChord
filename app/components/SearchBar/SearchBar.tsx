@@ -1,7 +1,8 @@
 import React, { useState, useEffect, FunctionComponent, useContext } from "react";
-import { Text, View, TouchableOpacity, StyleSheet, TextInputProps } from "react-native";
+import { View } from "react-native";
 import { TextInput } from "react-native-gesture-handler";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
+import styles from './SearchBar.style'
 
 interface SearchBarProps extends TextInputProps {
   query: string
@@ -32,23 +33,3 @@ const SearchBar: FunctionComponent<SearchBarProps> = (props) => {
   );
 }
 export default SearchBar
-
-const styles = StyleSheet.create({
-  container: {
-    padding: 10,
-    backgroundColor: 'white',
-  },
-  inputContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    backgroundColor: '#eee',
-    borderRadius: 100,
-    paddingHorizontal: 10
-  },
-  searchText: {
-    flex: 1,
-    paddingVertical: 8,
-    paddingLeft: 8,
-    fontSize: 18
-  }
-});

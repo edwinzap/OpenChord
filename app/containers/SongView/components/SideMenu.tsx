@@ -29,7 +29,7 @@ const SideMenu: FC<Props> = ({ isOpen, onDismiss, children }) => {
 const styles = StyleSheet.create({
   backgroundOverlayer: {
     flex: 1,
-    backgroundColor: '#00000020',
+    backgroundColor: '#00000060',
   },
   fixed: {
     position: 'absolute',
@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
   },
   card: {
     display: 'flex',
-    borderRadius: 4,
+    //borderRadius: 4,
     elevation: 2,
     backgroundColor: 'white',
   },

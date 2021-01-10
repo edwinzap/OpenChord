@@ -1,19 +1,20 @@
 import React, { useState, useEffect, FunctionComponent, useRef, useContext } from "react";
-import { StyleSheet, TextInput, Text, Keyboard, StatusBar, Platform } from "react-native";
+import { StyleSheet, TextInput, Text, Keyboard, Platform } from "react-native";
 import { FlatList } from "react-native-gesture-handler";
-import ListItem from "../components/ListItem";
+import ListItem from "../components/ListItem/ListItem";
 import { services, getService } from "../services";
 import { Doc } from "../services/BaseService";
-import SearchBar from "../components/SearchBar";
-import LoadingIndicator from "../components/LoadingIndicator";
+import SearchBar from "../components/SearchBar/SearchBar";
+import LoadingIndicator from "../components/LoadingIndicator/LoadingIndicator";
 import LanguageContext from "../languages/LanguageContext";
-import { CompositeNavigationProp } from "@react-navigation/native";
+import { CompositeNavigationProp, ThemeProvider } from "@react-navigation/native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { StackNavigationProp } from "@react-navigation/stack";
 import { BottomTabNavigationProp } from "@react-navigation/bottom-tabs";
 import { RootStackParamList, MainTabParamList } from "../AppNavigation";
-import EmptyListMessage from "../components/EmptyListMessage";
-import CustomHeader from "../components/CustomHeader";
+import EmptyListMessage from "../components/EmptyListMessage/EmptyListMessage";
+import CustomHeader from "../components/CustomHeader/CustomHeader";
+import theme from '../AppStyles'
 
 type OnlineSearchScreenNavigationProp = CompositeNavigationProp<
   BottomTabNavigationProp<MainTabParamList, 'OnlineSearch'>,
@@ -83,8 +84,7 @@ const OnlineSearch: FunctionComponent<Props> = (props) => {
   }
   return (
     <SafeAreaView style={styles.container}>
-      <CustomHeader title={t('online_search')}/>
-      <StatusBar barStyle='dark-content' backgroundColor='white' />
+      <CustomHeader title={t('online_search')} />
       <SearchBar
         inputRef={searchInput}
         onSubmitEditing={makeSearch}
@@ -125,11 +125,14 @@ export default OnlineSearch
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1
+    flex: 1,
+    backgroundColor: theme.colors.mainBackground
   },
   msgInfo: {
+    margin: theme.spacing.xs,
+    fontSize: theme.textVariants.subtitle.fontSize,
     textAlign: 'center',
-    color: '#aaa'
+    color: theme.colors.text
   },
   picker: {
     marginHorizontal: 10

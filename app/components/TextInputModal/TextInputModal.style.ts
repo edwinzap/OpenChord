@@ -16,7 +16,7 @@ export default StyleSheet.create({
     backgroundColor: theme.colors.transparentBackground
   },
   input: {
-    fontSize: theme.textVariants.subtitle,
+    fontSize: theme.textVariants.subtitle.fontSize,
     backgroundColor: theme.colors.contentBackground,
     paddingVertical: theme.spacing.s,
     paddingLeft: theme.spacing.xs

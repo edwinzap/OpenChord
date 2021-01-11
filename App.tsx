@@ -2,9 +2,9 @@ import 'react-native-gesture-handler';
 import React, { useContext, useEffect } from "react";
 import { StatusBar } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
-import AppNavigation from './app/navigation/AppNavigation'
+import AppNavigation from '@navigation/AppNavigation'
 import LanguageContext, { LanguageProvider } from "@languages/LanguageContext";
-import { GlobalSettings } from "@db";
+import { GlobalSettings } from "@db/GlobalSettings";
 
 import theme from '@styles/AppStyles'
 

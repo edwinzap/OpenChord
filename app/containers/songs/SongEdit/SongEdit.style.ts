@@ -23,7 +23,7 @@ export default StyleSheet.create({
     backgroundColor: theme.colors.contentBackground
   },
   input: {
-    fontSize: theme.textVariants.subtitle,
+    fontSize: theme.textVariants.subtitle.fontSize,
     paddingVertical: theme.spacing.s,
     borderBottomWidth: 1,
     borderBottomColor: theme.colors.cardBackground,

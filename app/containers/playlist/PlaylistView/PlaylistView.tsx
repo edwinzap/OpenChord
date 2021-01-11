@@ -4,8 +4,8 @@ import { StackNavigationProp } from "@react-navigation/stack";
 import { RouteProp, useFocusEffect } from "@react-navigation/native";
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
 import { List, Results } from "realm";
-import { Song, Playlist } from "@db";
-import { SortBy } from "@db/Playlist";
+import { Song } from "@db";
+import { Playlist, SortBy } from "@db/Playlist";
 import { RootStackParamList } from "@navigation/AppNavigation";
 import { TouchableIcon, EmptyListMessage, PrimaryButton, PickerModal, ListItem } from "@components";
 import { PickerOption } from "@components/PickerModal/PickerModal";

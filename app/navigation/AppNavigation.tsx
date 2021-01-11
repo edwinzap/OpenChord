@@ -90,7 +90,7 @@ const RootStack = createStackNavigator<RootStackParamList>()
 const AppNavigation = () => {
   const { t } = useContext(LanguageContext)
   return (
-    <RootStack.Navigator screenOptions={{ cardStyle: { backgroundColor: theme.colors.mainBackground, shadowColor: 'transparent' } }}>
+    <RootStack.Navigator screenOptions={{ cardStyle: { backgroundColor: theme.colors.mainBackground, shadowColor: '#00000000' } }}>
       <RootStack.Screen name="MainTab" component={MainTab} options={{ headerShown: false, title: t('home') }} />
       <RootStack.Screen
         name="OnlineArtistView"

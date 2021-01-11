@@ -18,5 +18,3 @@ export default realm;
 
 export { Song }
 export { Artist }
-export { Playlist }
-export { GlobalSettings }

@@ -3,7 +3,8 @@ import { FlatList, View, TextInput, StyleSheet } from "react-native";
 import { StackNavigationProp } from "@react-navigation/stack";
 import { RouteProp, CompositeNavigationProp } from "@react-navigation/native";
 import { BottomTabNavigationProp } from "@react-navigation/bottom-tabs";
-import { Song, Playlist } from "@db";
+import { Song } from "@db";
+import { Playlist } from "@db/Playlist"
 import { ListItem, SearchBar, EmptyListMessage } from "@components";
 import { RootStackParamList, MainTabParamList } from "@navigation/AppNavigation";
 import LanguageContext from "@languages/LanguageContext";

@@ -17,6 +17,6 @@ export default StyleSheet.create({
     flex: 1,
     paddingVertical: 8,
     paddingLeft: 8,
-    fontSize: theme.textVariants.subtitle
+    fontSize: theme.textVariants.subtitle.fontSize
   }
 });

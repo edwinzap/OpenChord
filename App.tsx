@@ -4,7 +4,7 @@ import { StatusBar } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import AppNavigation from '@navigation/AppNavigation'
 import LanguageContext, { LanguageProvider } from "@languages/LanguageContext";
-import { GlobalSettings } from "@db/GlobalSettings";
+import { GlobalSettings } from "@db";
 
 import theme from '@styles/AppStyles'
 

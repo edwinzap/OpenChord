@@ -13,7 +13,7 @@ const LoadingIndicator: FunctionComponent<LoadingIndicatorProps> = (props) => {
   return (
     <View style={[styles.container, style]}>
       <ErrorText style={styles.activity}>{error}</ErrorText>
-      {loading && <ActivityIndicator style={styles.activity} />}
+      {loading && <ActivityIndicator style={styles.activity} color={styles.activityProps.color} />}
     </View>
   )
 }

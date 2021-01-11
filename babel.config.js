@@ -5,7 +5,6 @@ module.exports = {
       'module-resolver',
       {
         root: ['./app'],
-        extensions: ['.ios.js', '.android.js', '.js', '.json', '.ts', '.tsx'],
         alias: {
           '@languages': './app/languages',
           '@db': './app/db',

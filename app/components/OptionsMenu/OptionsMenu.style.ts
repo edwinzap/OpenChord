@@ -11,7 +11,7 @@ export default StyleSheet.create({
     flex: 1
   },
   container: {
-    backgroundColor: theme.colors.contentBackground
+    backgroundColor: theme.colors.cardBackground
   },
   optionItem: {
     justifyContent: 'center',

@@ -1,7 +1,7 @@
 import { FunctionComponent } from "react";
 import ChordSheetJS, { Song } from 'chordsheetjs'
 import Chord from 'chordjs'
-import CustomHtmlDivFormatter from "@utils/customHtmlDivFormatter";
+import CustomHtmlDivFormatter from "@utils/CustomHtmlDivFormatter";
 
 interface SongProps {
   chords: Array<Chord>

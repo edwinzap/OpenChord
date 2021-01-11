@@ -16,5 +16,4 @@ var realm = new Realm({
 })
 export default realm;
 
-export { Song }
-export { Artist }
+export { Song, Artist, Playlist, GlobalSettings }

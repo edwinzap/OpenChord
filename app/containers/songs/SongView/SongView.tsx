@@ -5,8 +5,7 @@ import { StackNavigationProp } from "@react-navigation/stack";
 import { AutoScrollSlider, SongTransformer, ChordTab, SongRender, TouchableIcon } from "@components";
 import { SongRenderRef } from '@components/SongRender/SongRender'
 import { RootStackParamList } from "@navigation/AppNavigation";
-import { Song } from '@db'
-import { GlobalSettings } from "@db/GlobalSettings";
+import { Song, GlobalSettings } from '@db'
 import clamp from "@utils/clamp";
 import SideMenu from './components/SideMenu'
 import SelectPlaylist from "./components/SelectPlaylist"

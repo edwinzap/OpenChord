@@ -10,7 +10,7 @@ import { LoadingIndicator, PickerModal, ListItem } from "@components";
 import AboutDev from "./components/AboutDev";
 import { createFile, pad } from "@utils";
 import LanguageContext, { languages, translations, LanguageID } from "@languages/LanguageContext";
-import { GlobalSettings } from "@db/GlobalSettings";
+import { GlobalSettings } from "@db";
 import { SettingsStackParamList } from "@navigation/AppNavigation";
 
 

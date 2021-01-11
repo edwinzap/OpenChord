@@ -5,7 +5,8 @@ export default StyleSheet.create({
   container: {
     flexDirection: 'row',
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+    backgroundColor: theme.colors.mainBackground
   },
   devButton: {
     paddingVertical: theme.spacing.m

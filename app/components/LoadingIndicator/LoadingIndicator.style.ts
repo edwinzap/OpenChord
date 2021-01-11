@@ -7,6 +7,9 @@ export default StyleSheet.create({
     alignItems: 'center',
   },
   activity: {
-    paddingVertical: theme.spacing.m
+    paddingVertical: theme.spacing.m,
+  },
+  activityProps: {
+    color: theme.colors.activeTint
   }
 })

@@ -2,7 +2,7 @@ import React, { useState, FC } from "react";
 import { View, Text, StyleSheet } from "react-native";
 import Slider from "@react-native-community/slider";
 import { SongTransformer, SongRender } from "@components";
-import { GlobalSettings } from "@db";
+import { GlobalSettings } from "@db/GlobalSettings";
 
 export const MIN_FONT_SIZE = 14
 export const MAX_FONT_SIZE = 24

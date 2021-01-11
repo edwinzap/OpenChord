@@ -9,8 +9,8 @@ import { Song } from '@db'
 import { GlobalSettings } from "@db/GlobalSettings";
 import clamp from "@utils/clamp";
 import SideMenu from './components/SideMenu'
-import SelectPlaylist from "@components/SelectPlaylist"
-import PageTurner from "@components/PageTurner";
+import SelectPlaylist from "./components/SelectPlaylist"
+import PageTurner from "./components/PageTurner";
 import LanguageContext from "@languages/LanguageContext";
 import Chord from 'chordjs'
 import { MAX_FONT_SIZE, MIN_FONT_SIZE, FONT_SIZE_STEP } from "../../Settings/FontSizeSelect";

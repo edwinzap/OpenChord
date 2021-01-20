@@ -72,7 +72,7 @@ const PlaylistList: FunctionComponent<Props> = (props: Props) => {
     <SafeAreaView style={{ flex: 1, backgroundColor: theme.colors.mainBackground }}>
       <CustomHeader
         title={t('playlists')}
-        headerRight={<TouchableIcon onPress={() => setShowAddPlaylistModal(true)} name="plus" color={theme.colors.text} />}
+        headerRight={<TouchableIcon onPress={() => setShowAddPlaylistModal(true)} name="plus" />}
       />
       <TextInputModal
         error={error}

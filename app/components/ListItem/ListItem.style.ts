@@ -1,6 +1,15 @@
 import { StyleSheet } from "react-native";
 import theme from "@styles/AppStyles";
 
+
+const styleProps = {
+  touchableIcon: {
+    color: theme.colors.text
+  }
+};
+
+export {styleProps};
+
 export default StyleSheet.create({
   item: {
     flexDirection: 'row',
@@ -27,6 +36,6 @@ export default StyleSheet.create({
   },
   leftIcon: {
     width: 30,
-    tintColor: theme.colors.text
+    
   }
 });

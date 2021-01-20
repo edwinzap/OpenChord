@@ -70,6 +70,13 @@ export const sentences = [
   'invalid_file',
   'you_can_still_create_songs_manually',
   'create_song',
+  'yes',
+  'no',
+  'cancel',
+  'delete_playlist',
+  'delete_artist',
+  'delete_song',
+  'delete_confirmation'
 ] as const;
 export type SentenceID = typeof sentences[number];
 export type LanguageID = typeof languages[number];
@@ -148,6 +155,13 @@ const translations: Languages = {
     invalid_file: 'Invalid file',
     you_can_still_create_songs_manually: 'You can still create songs manually',
     create_song: 'Create song',
+    yes: 'Yes',
+    no: 'No',
+    cancel: 'Cancel',
+    delete_song: 'Delete song',
+    delete_artist: 'Delete artist',
+    delete_playlist: 'Delete playlist',
+    delete_confirmation: 'Are you sure you want to delete it?'
   },
   pt_br: {
     language_name: "Português (Brasil)",
@@ -220,6 +234,13 @@ const translations: Languages = {
     invalid_file: 'Arquivo inválido',
     you_can_still_create_songs_manually: 'Você ainda pode criar músicas manualmente',
     create_song: 'Criar música',
+    yes: 'Yes', //TODO: translations
+    no: 'No',
+    cancel: 'Cancel',
+    delete_song: 'Delete song',
+    delete_artist: 'Delete artist',
+    delete_playlist: 'Delete playlist',
+    delete_confirmation: 'Are you sure you want to delete it?'
   },
   fr_be: {
     language_name: "Français",
@@ -292,6 +313,13 @@ const translations: Languages = {
     invalid_file: 'Fichier invalide',
     you_can_still_create_songs_manually: 'Tu peux toujours créer une chanson manuellement',
     create_song: 'Créer une chanson',
+    yes: 'Oui',
+    no: 'Non',
+    cancel: 'Annuler',
+    delete_song: 'Supprimer la chanson',
+    delete_artist: 'Supprimer l\'artiste',
+    delete_playlist: 'Supprimer la playlist',
+    delete_confirmation: 'Etes-vous sûr de vouloir supprimer l\'élément ?'
   }
 }
 export default translations

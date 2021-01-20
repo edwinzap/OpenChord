@@ -1,5 +1,6 @@
 import { StyleSheet } from "react-native";
 import theme from '@styles/AppStyles'
+import { color } from "react-native-reanimated";
 
 export default StyleSheet.create({
   backgroundOverlayer: {
@@ -19,6 +20,7 @@ export default StyleSheet.create({
   },
   optionTitle: {
     paddingVertical: theme.spacing.m,
-    fontSize: theme.textVariants.title.fontSize
+    fontSize: theme.textVariants.title.fontSize,
+    color: theme.colors.text
   }
 });

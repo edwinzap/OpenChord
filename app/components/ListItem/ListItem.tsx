@@ -3,7 +3,7 @@ import { Text, View, TouchableOpacity } from "react-native";
 import { TouchableIcon, OptionsMenu } from "@components";
 import { Option } from "@components/OptionsMenu/OptionsMenu";
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
-import styles from './ListItem.style'
+import styles, { styleProps } from "./ListItem.style";
 
 export type LeftIconOptions = null | 'empty-space' | 'arrow-up' | 'arrow-down'
 interface ListItemProps {
@@ -24,15 +24,16 @@ const ListItem: FunctionComponent<ListItemProps> = (props) => {
         <MaterialCommunityIcons
           style={styles.leftIcon}
           name={props.leftIcon}
-          size={14} />}
+          size={14}
+          color={styleProps.touchableIcon.color} />}
       <View style={styles.textContainer}>
         <Text style={styles.title}>{props.title}</Text>
         {props.subtitle && <Text style={styles.subtitle}>{props.subtitle}</Text>}
       </View>
-      {props.showIcon == 'check' && <TouchableIcon onPress={props.onPress} name="check" size={25} />}
-      {props.showIcon == 'plus' && <TouchableIcon onPress={props.onPress} name="plus" size={25} />}
+      {props.showIcon == 'check' && <TouchableIcon onPress={props.onPress} name="check" size={25} color={styleProps.touchableIcon.color} />}
+      {props.showIcon == 'plus' && <TouchableIcon onPress={props.onPress} name="plus" size={25} color={styleProps.touchableIcon.color} />}
       {props.options &&
-        <TouchableIcon onPress={() => setMenuEnabled(true)} name="dots-vertical" size={25} color={styles.leftIcon.tintColor} />
+        <TouchableIcon onPress={() => setMenuEnabled(true)} name="dots-vertical" size={25} color={styleProps.touchableIcon.color} />
       }
       {props.options &&
         <OptionsMenu

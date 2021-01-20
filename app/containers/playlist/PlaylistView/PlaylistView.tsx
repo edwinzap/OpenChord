@@ -1,7 +1,7 @@
 import React, { useState, useEffect, FunctionComponent, useContext, useLayoutEffect, useCallback } from "react";
-import { FlatList, View, TouchableOpacity, Text } from "react-native";
+import { FlatList, View, TouchableOpacity, Text, StyleSheet } from "react-native";
 import { StackNavigationProp } from "@react-navigation/stack";
-import { RouteProp, useFocusEffect } from "@react-navigation/native";
+import { RouteProp, ThemeProvider, useFocusEffect, useTheme } from "@react-navigation/native";
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
 import { List, Results } from "realm";
 import { Song } from "@db";
@@ -13,7 +13,6 @@ import { LeftIconOptions } from "@components/ListItem/ListItem";
 import LanguageContext from "@languages/LanguageContext";
 import { alertDelete } from "@utils/alertDelete";
 import styles from './PlaylistView.style';
-
 
 type PlaylistViewScreenRouteProp = RouteProp<RootStackParamList, 'PlaylistView'>;
 type PlaylistViewScreenNavigationProp = StackNavigationProp<
@@ -41,8 +40,8 @@ const PlaylistView: FunctionComponent<Props> = (props: Props) => {
   function onSelectSong(id: string, title: string) {
     props.navigation.navigate('SongView', { id, title })
   }
-  function onPressEditSong(id: string) {
-    props.navigation.navigate('SongEdit', { id })
+  function onPressEditSong(id: string, title: string) {
+    props.navigation.navigate('SongEdit', { id, title })
   }
   function onPressDeleteSong(songId: string) {
     alertDelete('song', songId, () => {
@@ -110,15 +109,15 @@ const PlaylistView: FunctionComponent<Props> = (props: Props) => {
         ListHeaderComponent={() => {
           if (songs.length > 0)
             return (
-              <View style={{ backgroundColor: styles.container.backgroundColor }}>
-                <PrimaryButton style={{ margin: 10 }} onPress={onPressAddSongs} title={t('add_songs').toUpperCase()} outline />
-                <TouchableOpacity style={{ flexDirection: 'row', paddingVertical: 18, borderBottomWidth: 1, borderColor: '#eee', paddingLeft: 20, alignItems: 'center' }} onPress={() => setEnableSortSelect(true)}>
-                  <Text style={{ color: '#777' }}>{sortOptions.find(o => o.value === sortBy)?.label.toUpperCase()}</Text>
+              <View style={styles.container}>
+                <PrimaryButton style={styles.addSongsButton} onPress={onPressAddSongs} title={t('add_songs').toUpperCase()} outline />
+                <TouchableOpacity style={styles.sortingButton} onPress={() => setEnableSortSelect(true)}>
+                  <Text style={styles.sortingText}>{sortOptions.find(o => o.value === sortBy)?.label.toUpperCase()}</Text>
                   <MaterialCommunityIcons
                     name={reverse ? 'arrow-up' : 'arrow-down'}
-                    style={{ marginLeft: 8 }}
+                    style={styles.sortingArrow}
                     size={20}
-                    color='#777' />
+                    color={'white'} />
                 </TouchableOpacity>
               </View>
             )
@@ -139,7 +138,7 @@ const PlaylistView: FunctionComponent<Props> = (props: Props) => {
             subtitle={item.artist.name}
             onPress={() => onSelectSong(item.id!, item.title)}
             options={[
-              { title: t('edit'), onPress: () => onPressEditSong(item.id!) },
+              { title: t('edit'), onPress: () => onPressEditSong(item.id!, t('edit_song')) },
               { title: t('delete'), onPress: () => onPressDeleteSong(item.id!) }
             ]}
           />

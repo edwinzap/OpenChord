@@ -81,7 +81,7 @@ export type RootStackParamList = {
   SongPreview: { serviceName: string, path: string }
   ArtistView: { id: string, title: string }
   SongView: { id: string, title: string }
-  SongEdit: undefined | { id: string }
+  SongEdit: { id: string, title: string }
   PlaylistView: { id: string, title: string }
   PlaylistAddSongs: { id: string }
   PlaylistEdit: { id: string },
@@ -110,7 +110,8 @@ const AppNavigation = () => {
         options={({ route }) => ({ title: route.params.title })} />
       <RootStack.Screen
         name="SongEdit"
-        component={SongEdit} />
+        component={SongEdit}
+        options={({ route }) => ({ title: route.params.title })} />
       <RootStack.Screen
         name="PlaylistView"
         component={PlaylistView}
